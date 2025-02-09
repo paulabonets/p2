@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Practica2_PaulaBONET</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club cinefilo</title>
+  <link rel="stylesheet" href="styles.css">
+ <style>
+    /* Estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #210000;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      background-image: url('https://source.unsplash.com/1600x900/?movie,theater');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    nav {
+      background-color: #8B0000;
+      text-align: center;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #ffcc00;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e50914;
+    }
+
+    main {
+      padding: 3rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    h1, h2 {
+      color: #C21807;
+      font-family: 'Georgia', serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+   
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bienvenido al Club de Cine y Series 🍿🎬</h1>
+    <p>Explora las mejores recomendaciones de películas y series para disfrutar en casa</p>
+  </header>
+
+  <nav>
+    <a onclick="showTab('inicio')">Inicio</a>
+    <a onclick="showTab('clasicas')">Clásicas</a>
+    <a onclick="showTab('estrenos')">Estrenos</a>
+    <a onclick="showTab('series')">Series</a>
+    <a onclick="showTab('plan-personalizado')">Plan Personalizado</a>
+    <a onclick="showTab('foro')">Foro</a>
+</nav>
+
+
+  <main>
+    <section id="inicio" class="tab-content active">
+  <h2>🎬 Película Recomendada del Día</h2>
+  <div class="video-container">
+    <iframe width="100%" height="500" src="https://www.youtube.com/embed/Qlbr7gJgBus" 
+      title="Película Recomendada" frameborder="0" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="sinopsis">
+    <h3>🔍 Sinopsis</h3>
+    <p>Sobrecualificada e infravalorada, Rita es una abogada de un gran bufete que un día recibe una oferta inesperada: ayudar al temido jefe de un cartel a retirarse de su negocio y desaparecer para siempre convirtiéndose en la mujer que él siempre ha soñado ser. </p>
+  </div>
+</section>
+
+       <section id="clasicas" class="tab-content active">
+      <h2>🎥 Mejores Películas de la Historia </h2>
+<div class="content-grid">
+  <div class="flip-card" onclick="flipCard(this)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://www.udllibros.com/imagenes/9788418/978841818137.JPG" alt="El Padrino">
+      </div>
+      <div class="flip-card-back" onclick="flipCard(this)">
+        <p>Un drama épico sobre la familia Corleone, una de las familias mafiosas más influyentes de Nueva York.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card" onclick="flipCard(this)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://th.bing.com/th/id/R.aab8df2288762aa92f5a99565af88731?rik=uOsWwghmLYfD2g&riu=http%3a%2f%2fis1.mzstatic.com%2fimage%2fthumb%2fVideo2%2fv4%2f9e%2fbe%2fcd%2f9ebecd7b-3e70-be67-5028-951773725e14%2fsource%2f2000x3000sr.jpg&ehk=Fj4aBI42PI6KKLlMMTq0wcrNDqO2rBPcgp1Knhe%2fC08%3d&risl=&pid=ImgRaw&r=0" alt="Forrest Gump">
+      </div>
+      <div class="flip-card-back" onclick="flipCard(this)">
+        <p>Forrest Gump, un hombre con una vida extraordinaria, recorre los eventos históricos de EE.UU.</p>
+      </div>
+    </div>
+  </div>
+    <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://cdn.shopify.com/s/files/1/1416/8662/products/inception_2010_imax_original_film_art_2000x.jpg?v=1551890318" alt="Inception">
+      </div>
+      <div class="flip-card-back">
+        <p>Dom Cobb es un experto en el arte de apropiarse, durante el sueño, de los secretos del subconsciente ajeno. La extraña habilidad de Cobb le ha convertido en un hombre muy cotizado en el mundo del espionaje, pero también lo ha condenado a ser un fugitivo y, por consiguiente, a renunciar a llevar una vida normal.</p>
+      </div>
+    </div>
+  </div>
+  <div class="content-grid">
+  <div class="flip-card" onclick="flipCard(this)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://th.bing.com/th/id/R.c2b0e8fc2683c01832134477c96ea6d8?rik=hwy1Y1IEES2C3A&riu=http%3a%2f%2fimage.tmdb.org%2ft%2fp%2foriginal%2fpbWgQPC6l9pkpEpi3WNRSfWYNP6.jpg&ehk=SC91Zt2JGs6nNYmKcg1BEwVxSwgyX7pg5XyEP1WAmIA%3d&risl=&pid=ImgRaw&r=0" alt="Pulp Fiction">
+      </div>
+      <div class="flip-card-back">
+        <p>Jules y Vincent, dos asesinos a sueldo con no demasiadas luces, trabajan para el gángster Marsellus Wallace. Vincent le confiesa a Jules que Marsellus le ha pedido que cuide de Mia, su atractiva mujer. Jules le recomienda prudencia, es muy peligroso sobrepasarse con la novia del jefe.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card" onclick="flipCard(this)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://1.bp.blogspot.com/-TiWWvoPczYM/WJ0H9Qg7RiI/AAAAAAAAHTY/4j89nhowmnQgZpbZ62OLEe5CnUf93KvNwCLcB/s1600/Cadena%2Bperpetua-PELICULASTODAY.jpg" alt="Cadena Perpetua">
+      </div>
+      <div class="flip-card-back">
+        <p>Acusado del asesinato de su mujer, Andrew Dufresne, tras ser condenado a cadena perpetua, es enviado a la cárcel de Shawshank. Conseguirá ganarse la confianza del director del centro y el respeto de sus compañeros de prisión, especialmente de Red, el jefe de la mafia de los sobornos</p>
+      </div>
+    </div>
+  </div>
+      <div class="flip-card" onclick="flipCard(this)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://th.bing.com/th/id/R.ecfd2e5af5e1dec4ae26d0ea63af11ec?rik=MqF9OmY83HUITg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-bY9jyc1roVQ%2fTWgm9JluFJI%2fAAAAAAAAAy0%2fexVN3rxX1hM%2fs1600%2f12_Hombres_Sin_Piedad.jpg&ehk=l7SRNoXOApD1mw402Nj3Y%2bN%2btFfsnH%2beKyM%2f%2bAVIYHQ%3d&risl=&pid=ImgRaw&r=0" alt="12 Hombres sin piedad">
+      </div>
+      <div class="flip-card-back">
+        <p>Los doce miembros de un jurado deben juzgar a un adolescente acusado de haber matado a su padre. Todos menos uno están convencidos de la culpabilidad del acusado</p>
+      </div>
+    </div>
+  </div>
+      <div class="flip-card" onclick="flipCard(this)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://www.benitomovieposter.com/catalog/images/movieposter/2246.jpg" alt="Los 400 Golpes">
+      </div>
+      <div class="flip-card-back">
+        <p>Con sólo catorce años, Antoine Doinel se ve obligado no sólo a ser testigo de los problemas conyugales de sus padres, sino también a soportar las exigencias de un severo profesor. Un día, asustado porque no ha cumplido un castigo impuesto por el maestro, decide hacer novillos con su amigo René. </p>
+      </div>
+    </div>
+  </div>
+      </div>
+    </section>
+    <section id="estrenos" class="tab-content">
+      <h2>🎬 Estrenos</h2>
+      <div class="content-grid" onclick="flipCard(this)">
+        <div class="card">
+          <img src="https://pics.filmaffinity.com/la_infiltrada-389525871-large.jpg" alt="Infiltrada">
+          <a href="#">La Infiltrada</a>
+        </div>
+        <div class="card">
+          <img src="https://historiadelcine.es/wp-content/uploads/2025/01/the-brutalist-2024-opiniones-resena-min-768x1138.jpg" alt="Brutalist">
+          <a href="#">The Brutalist</a>
+        </div>
+        <div class="card">
+          <img src="https://th.bing.com/th?id=ODL.a619b4dc86a96642e5e54731d71b0558&w=135&h=201&c=10&rs=1&qlt=90&o=6&dpr=1.7&pid=algoBlockDebug" alt="Mufasa">
+          <a href="#">Mufasa</a>
+        </div>
+      <div class="content-grid" onclick="flipCard(this)">
+        <div class="card">
+          <img src="https://www.ecartelera.com/carteles/18900/18937/002_m.jpg" alt="Companion">
+          <a href="#">La acompañante</a>
+        </div>
+        <div class="card">
+          <img src="https://all.web.img.acsta.net/img/2c/fd/2cfd44f69212b3b45cf3a45f7cdbdf0b.jpg/r_2500_x" alt="Conclave">
+          <a href="#">Cónclave</a>
+        </div>
+      <div class="content-grid" onclick="flipCard(this)">
+        <div class="card">
+          <img src="https://th.bing.com/th/id/R.a94b7bfcc559b5ee03cfc244ae2fe0e0?rik=DdG%2fjSOGb2YPSA&riu=http%3a%2f%2fwww.impawards.com%2f2023%2fposters%2foppenheimer_ver5_xlg.jpg&ehk=8dZ5IP%2fdR71%2bsuKITvBuD4WIDXf9Hz92USrhv0Lu6qo%3d&risl=&pid=ImgRaw&r=0" alt="Oppenheimer">
+          <a href="#">Oppenheimer</a>
+        </div>
+        <div class="card">
+          <img src="https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2023/05/DUNE2_VERT_Tsr_2764x4096_DOM_REV.jpg" alt="Dune Parte 2">
+          <a href="#">Dune: Parte 2</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="series" class="tab-content">
+      <h2>📺 Series Imprescindibles</h2>
+      <div class="content-grid">
+        <div class="card">
+          <img src="https://image.tmdb.org/t/p/w300/ggFHVNu6YYI5L9pCfOacjizRGt.jpg" alt="Breaking Bad">
+          <a href="#">Breaking Bad</a>
+        </div>
+        <div class="card">
+          <img src="https://m.media-amazon.com/images/I/81xSkPdaxML._SL1500_.jpg" alt="Game of Thrones">
+          <a href="#">Game of Thrones</a>
+        </div>
+        <div class="card">
+          <img src="https://th.bing.com/th/id/R.baf130a13a90e656bb4c59d245564d23?rik=buwYPHkk4baQPA&pid=ImgRaw&r=0" alt="The Office">
+          <a href="#">The Office</a>
+        </div>
+        <div class="card">
+          <img src="https://image.tmdb.org/t/p/original/wn7ye3kK0O9jrIfBJFqHEBMgpP2.jpg" alt="Big Bang Theory">
+          <a href="#">Big Bang Theory</a>
+        </div>
+        <div class="card">
+          <img src="https://th.bing.com/th/id/R.1ed4edc367b564efa0492f668461cb0c?rik=qZ2bpfiRwDHf4w&pid=ImgRaw&r=0" alt="Friends">
+          <a href="#">Friends</a>
+        </div>
+        <div class="card">
+          <img src="https://th.bing.com/th/id/OIP.iMRKC3ypmNNApi95A2khYQHaJ_?rs=1&pid=ImgDetMain" alt="Suits">
+          <a href="#">Suits</a>
+        </div>
+        <div class="card">
+          <img src="https://pics.filmaffinity.com/Los_Soprano_Serie_de_TV-196243243-large.jpg" alt="Los soprano">
+          <a href="#">Los Soprano</a>
+        </div>
+        <div class="card">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d7590f135861167.61ef6fb49f8e4.jpg" alt="Peaky Blinders">
+          <a href="#">Peaky Blinders</a>
+        </div>
+      </div>
+    </section>
+<section id="plan-personalizado" class="tab-content">
+  <h2>🎯 Plan Personalizado de Películas y Series</h2>
+  <p>No sabes qué películas o series ver este mes? Rellena este formulario y recibe una selección personalizada según tus gustos en tu correo.</p>
+
+  <div class="form-container">
+    <form id="form-plan">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" required>
+
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" min="5" max="100" required>
+
+      <label>Prefieres:</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="prefiere-peliculas"> <label for="prefiere-peliculas">Películas</label>
+        <input type="checkbox" id="prefiere-series"> <label for="prefiere-series">Series</label>
+      </div>
+
+      <label for="cantidad">Cantidad de recomendaciones:</label>
+      <input type="number" id="cantidad" min="1" max="20" required>
+
+      <label for="genero">Género Favorito:</label>
+      <select id="genero" required>
+        <option value="accion">Acción</option>
+        <option value="comedia">Comedia</option>
+        <option value="romance">Romance</option>
+        <option value="drama">Drama</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" required>
+
+      <button type="submit">Solicitar Plan</button>
+    </form>
+  </div>
+</section>
+
+   <!-- FORO -->   
+<section id="foro" class="tab-content" style="padding: 2rem; background-color: #3b1d1d; border-radius: 10px;">
+  <h2 style="text-align: center; font-size: 2rem; color: #ffcc00;">💬 FORO DE RECOMENDACIONES</h2>
+  
+  <!-- Sección para recomendar películas -->
+  <div class="forum" style="background-color: #512222; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+    <h3 style="color: #ffcc00;">🎥 Recomienda una Película</h3>
+    <input type="text" id="nombre-pelicula" placeholder="Tu nombre" style="padding: 0.5rem; border-radius: 5px; margin-right: 5px;">
+    <input type="text" id="titulo-pelicula" placeholder="Título de la película" style="padding: 0.5rem; border-radius: 5px; margin-right: 5px;">
+    <select id="rating-pelicula" style="padding: 0.5rem; border-radius: 5px; margin-right: 5px;">
+      <option value="5">⭐⭐⭐⭐⭐</option>
+      <option value="4">⭐⭐⭐⭐</option>
+      <option value="3">⭐⭐⭐</option>
+      <option value="2">⭐⭐</option>
+      <option value="1">⭐</option>
+    </select>
+    <button onclick="agregarPelicula()" style="background-color: #ffcc00; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer;">Enviar</button>
+  </div>
+  <div class="comments" id="peliculas-recomendadas" style="background-color: #692b2b; padding: 1rem; border-radius: 10px; margin-bottom: 2rem;"></div>
+
+  <!-- Sección para comentarios entre usuarios -->
+  <div class="forum" style="background-color: #512222; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+    <h3 style="color: #ffcc00;">📝 Comenta sobre la película que quieras o aporta al foro</h3>
+    <input type="text" id="nombre-comentario" placeholder="Tu nombre" style="padding: 0.5rem; border-radius: 5px; margin-right: 5px;">
+    <textarea id="comentario" rows="4" placeholder="Escribe tu comentario..." style="padding: 0.5rem; border-radius: 5px; width: 100%; margin-bottom: 5px;"></textarea>
+    <button onclick="agregarComentario()" style="background-color: #ffcc00; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer;">Enviar</button>
+  </div>
+  <div class="comments" id="comentarios-foro" style="background-color: #692b2b; padding: 1rem; border-radius: 10px; margin-bottom: 2rem;"></div>
+  
+  <!-- Sección de contacto -->
+  <div class="contacto" style="background-color: #512222; padding: 1.5rem; border-radius: 10px;">
+    <h3 style="color: #ffcc00;">📧 Contáctanos</h3>
+    <p style="color: #fff;">Añade tu correo electrónico y nos pondremos en contacto contigo:</p>
+    <input type="email" id="correo" placeholder="Tu correo electrónico" style="padding: 0.5rem; border-radius: 5px; margin-right: 5px;">
+    <button onclick="enviarCorreo()" style="background-color: #ffcc00; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer;">Enviar</button>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Club de Cine y Series 🍿🎥. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+ function agregarPelicula() {
+    const nombre = document.getElementById("nombre-pelicula").value;
+    const titulo = document.getElementById("titulo-pelicula").value;
+    const rating = document.getElementById("rating-pelicula").value;
+    const contenedor = document.getElementById("peliculas-recomendadas");
+    
+    if (nombre && titulo) {
+      const nuevoComentario = document.createElement("div");
+      nuevoComentario.classList.add("comment");
+      nuevoComentario.innerHTML = `<strong style="color:#ffcc00;">${nombre} recomienda:</strong> ${titulo} (${"⭐".repeat(rating)})`;
+      nuevoComentario.style.padding = "0.5rem";
+      nuevoComentario.style.borderBottom = "1px solid #ffcc00";
+      contenedor.appendChild(nuevoComentario);
+    }
+  }
+  document.getElementById("form-plan").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const nombre = document.getElementById("nombre").value;
+    const apellido = document.getElementById("apellido").value;
+    const edad = document.getElementById("edad").value;
+    const cantidad = document.getElementById("cantidad").value;
+    const genero = document.getElementById("genero").value;
+    const email = document.getElementById("email").value;
+    
+    let preferencias = [];
+    if (document.getElementById("prefiere-peliculas").checked) preferencias.push("Películas");
+    if (document.getElementById("prefiere-series").checked) preferencias.push("Series");
+    
+    if (preferencias.length === 0) {
+        alert("Selecciona al menos una preferencia: Películas o Series.");
+        return;
+    }
+    
+    alert(`Gracias ${nombre}, hemos enviado tu plan personalizado de ${cantidad} recomendaciones de ${preferencias.join(" y ")} en el género ${genero} a ${email}.`);
+});
+
+  function agregarComentario() {
+    const nombre = document.getElementById("nombre-comentario").value;
+    const comentario = document.getElementById("comentario").value;
+    const contenedor = document.getElementById("comentarios-foro");
+    
+    if (nombre && comentario) {
+      const nuevoComentario = document.createElement("div");
+      nuevoComentario.classList.add("comment");
+      nuevoComentario.innerHTML = `<strong style="color:#ffcc00;">${nombre}:</strong> ${comentario}`;
+      nuevoComentario.style.padding = "0.5rem";
+      nuevoComentario.style.borderBottom = "1px solid #ffcc00";
+      contenedor.appendChild(nuevoComentario);
+    }
+  }
+  
+  function enviarCorreo() {
+    const correo = document.getElementById("correo").value;
+    if (correo) {
+      alert("Gracias por contactarnos. Te responderemos pronto a " + correo);
+    }
+  }
+  function showTab(tabId) {
+      // Ocultar todas las pestañas
+      document.querySelectorAll('.tab-content').forEach(tab => {
+          tab.classList.remove('active');
+      });
+
+      // Mostrar la pestaña seleccionada
+      document.getElementById(tabId).classList.add('active');
+  }
+    function flipCard(card) {
+    card.classList.toggle("flipped");
+  }
+  </script>
+
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
